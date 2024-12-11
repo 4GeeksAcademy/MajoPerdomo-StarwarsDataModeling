@@ -27,7 +27,7 @@ class Faction(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(50), nullable=False, unique=True)
     description = Column(Text)
-    alignment = Column(String(20))  # 'Light', 'Dark', 'Neutral'
+    alignment = Column(String(20))  
     characters = relationship("Character", back_populates="faction")
 
 class Character(Base):
@@ -56,7 +56,7 @@ class MediaAppearance(Base):
     __tablename__ = 'media_appearance'
     id = Column(Integer, primary_key=True)
     title = Column(String(100), nullable=False)
-    type = Column(String(50))  # 'Movie', 'TV Series', 'Book', 'Comic', etc.
+    type = Column(String(50))  
     release_year = Column(Integer)
     characters = relationship("Character", secondary="character_media")
 
